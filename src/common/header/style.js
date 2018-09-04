@@ -49,16 +49,32 @@ export const NavSearch = styled.input`
     height:38px;
     margin-top: 9px;
     margin-left: 18px;
-    padding: 0 20px;
+    padding: 0 30px 0 20px;
     box-sizing: border-box;
     border: none;
     outline: none;
     border-radius: 19px;
     background: #eee;
     font-size: 14px;
+    color: #666;
     &::placeholder{
         color: #999;
     }
+`
+
+export const SearchWrapper = styled.div`
+    float: left;
+    position: relative;
+    .iconfont {
+        position: absolute;
+        right: 5px;
+        bottom: 5px;
+        width: 30px;
+        line-height: 30px;
+        border-radius: 15px;
+        text-align: center;
+    }
+
 `
 
 export const Addition = styled.div`
