@@ -4,7 +4,31 @@ import { actionCreators } from './store';
 import { CSSTransition } from 'react-transition-group';
 import { HeaderWrapper, Logo, Nav,
     NavItem, NavSearch, Addition,
-    Button, SearchWrapper } from './style'
+    Button, SearchWrapper, SearchInfo,
+    SearchInfoTitle, SearchInfoSwitch,
+    SearchInfoItem } from './style'
+
+const getListArea = (show) => {
+    if(show){
+        return (
+            <SearchInfo>
+                <SearchInfoTitle>HOT
+                    <SearchInfoSwitch>Switch</SearchInfoSwitch>
+                </SearchInfoTitle>
+                <div>
+                    <SearchInfoItem>Education</SearchInfoItem>
+                    <SearchInfoItem>Story</SearchInfoItem>
+                    <SearchInfoItem>Story</SearchInfoItem>
+                    <SearchInfoItem>Sports</SearchInfoItem>
+                    <SearchInfoItem>Sports</SearchInfoItem>
+                    <SearchInfoItem>Education</SearchInfoItem>
+                </div>
+            </SearchInfo>
+        )
+    }else{
+        return null;
+    }
+}
 
 const Header = (props) => {
     return (
@@ -31,6 +55,7 @@ const Header = (props) => {
                     </NavSearch>
                     </CSSTransition>
                     <i className={props.focused ? 'focused iconfont' : 'iconfont'}>&#xe609;</i>
+                    { getListArea(props.focused) }
                 </SearchWrapper>
                     
             </Nav>
@@ -47,7 +72,7 @@ const Header = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        focused: state.header.get('focused')
+        focused: state.get('header').get('focused')
     }
 }
 
