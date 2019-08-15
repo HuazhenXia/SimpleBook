@@ -124,6 +124,10 @@ export const SearchInfoSwitch = styled.span`
 
 `
 
+export const SearchInfoList = styled.div`
+	overflow: hidden;
+`;
+
 export const SearchInfoItem = styled.a`
     display: block;
     float: left;
