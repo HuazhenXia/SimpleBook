@@ -84,7 +84,7 @@ export const NavSearch = styled.input`
 export const SearchWrapper = styled.div`
     float: left;
     position: relative;
-    
+
     .iconfont {
         position: absolute;
         right: 5px;
@@ -93,6 +93,7 @@ export const SearchWrapper = styled.div`
         line-height: 30px;
         border-radius: 15px;
         text-align: center;
+        z-index: 9999;
         &.focused{
             background: #777;
             color:#fff;
@@ -105,7 +106,9 @@ export const SearchInfo = styled.div`
     position: absolute;
     left: 0;
     top: 56px;
+    background: #fff;
     width: 240px;
+    z-index: 9999;
     padding: 0 20px;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.2)
 `
